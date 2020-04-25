@@ -4,20 +4,17 @@ using System.Text;
 
 namespace Snake
 {
-    class HorizontalLine :Figure
+    class Snake : Figure
     {
-
-        public HorizontalLine(int xleft, int xright, int y, char sym)
+        public Snake(Point tall, int lenght, Direction direction)
         {
             pList = new List<Point>();
-            for (int x = xleft; x<= xright; x++)
+            for (int i = 0; i < lenght; i++)
             {
-                Point p = new Point(x, y, sym);
+                Point p = new Point(tall);
+                p.Move(i, direction);
                 pList.Add(p);
-
             }
         }
-
-       
     }
 }
